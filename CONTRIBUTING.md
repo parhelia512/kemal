@@ -31,6 +31,22 @@ Kemal follows the standard Crystal code style. Please ensure your code is format
 crystal tool format
 ```
 
+## Quality Checks (Before Opening PR)
+
+Please run formatting, lint, and tests in this order:
+
+```bash
+crystal tool format
+bin/ameba
+crystal spec
+```
+
+Optional one-liner:
+
+```bash
+crystal tool format && bin/ameba && crystal spec
+```
+
 ## Submitting a Pull Request
 
 1. Create a new branch for your feature or bug fix:
@@ -44,6 +60,14 @@ crystal tool format
    ```
 4. Open a **Pull Request** on the main Kemal repository.
 5. Describe your changes and link to any relevant issues.
+
+### Pull Request Checklist
+
+- [ ] Code is formatted with `crystal tool format`
+- [ ] Lint checks pass (`bin/ameba`)
+- [ ] Specs pass (`crystal spec`)
+- [ ] New behavior is covered by specs
+- [ ] Changelog is updated when needed
 
 ## Reporting Bugs
 
