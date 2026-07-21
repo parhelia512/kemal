@@ -1,3 +1,21 @@
+# 1.12.0 (21-07-2026)
+
+- Crystal 1.21.0 support :tada:
+- Add `sse` helper for Server-Sent Events [#755](https://github.com/kemalcr/kemal/pull/755). Thanks @sdogruyol :pray:
+
+```crystal
+sse "/events" do |stream, env|
+  stream.send("tick", event: "tick", id: 1)
+end
+```
+
+- Fix unhandled exception when headers were already sent to the client [#760](https://github.com/kemalcr/kemal/pull/760). Thanks @sdogruyol :pray:
+- Fix `before_all` filters running twice [#758](https://github.com/kemalcr/kemal/pull/758). Thanks @sdogruyol :pray:
+- Show actual defaults in `--help` when host/port are overridden [#751](https://github.com/kemalcr/kemal/pull/751). Thanks @Singond :pray:
+- Simplify helpers with version controls [#752](https://github.com/kemalcr/kemal/pull/752). Thanks @sdogruyol :pray:
+- Raise minimum Crystal version to `>= 1.12.0`
+- Fix MySQL example placeholder syntax [#756](https://github.com/kemalcr/kemal/pull/756). Thanks @drum445 :pray:
+
 # 1.11.0 (13-04-2026)
 
 - ***(SECURITY)*** Fix chunked multipart body limits [#748](https://github.com/kemalcr/kemal/pull/748). Thanks @canermastan :pray:
